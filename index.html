@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jesús Martín Godoy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             display: flex;
@@ -17,38 +18,32 @@
             transition: background-color 0.3s, color 0.3s;
         }
         a {
-            margin: 0 10px;
+            margin: 0 15px;
+            color: inherit;
+            text-decoration: none;
         }
-        img {
-            width: 50px;
-            height: 50px;
-            filter: invert(0); /* For light mode (black logos) */
-            transition: filter 0.3s;
+        i {
+            font-size: 2rem;
+            transition: color 0.3s;
         }
-        
-        /* Dark mode styles */
+        /* Modo oscuro */
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #121212;
                 color: #e0e0e0;
             }
-            img {
-                filter: invert(1); /* For dark mode (white logos) */
-            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="https://twitter.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/X_logo_2023.svg" alt="X (Twitter)">
-        </a>
-        <a href="https://bsky.app" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bluesky_logo.svg/1024px-Bluesky_logo.svg.png" alt="Bluesky">
-        </a>
-        <a href="mailto:jesus@martingodoy.com">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_icon.svg" alt="Email">
-        </a>
-    </div>
+    <a href="https://x.com/martingodoyj" target="_blank" aria-label="X (Twitter)">
+        <i class="fab fa-x-twitter"></i>
+    </a>
+    <a href="https://bsky.app/profile/jesusmartin.bsky.social" target="_blank" aria-label="Bluesky">
+        <i class="fab fa-bluesky"></i>
+    </a>
+    <a href="mailto:jesus@martingodoy.com" aria-label="Correo electrónico">
+        <i class="fas fa-envelope"></i>
+    </a>
 </body>
 </html>

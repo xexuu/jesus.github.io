@@ -21,6 +21,11 @@
             margin: 0 15px;
             color: inherit;
             text-decoration: none;
+            outline: none;
+        }
+        a:focus {
+            outline: 2px solid #007acc;
+            outline-offset: 4px;
         }
         i {
             font-size: 2rem;
@@ -36,14 +41,17 @@
     </style>
 </head>
 <body>
-    <a href="https://x.com/martingodoyj" target="_blank" aria-label="X (Twitter)">
-        <i class="fab fa-x-twitter"></i>
+    <a href="https://twitter.com" target="_blank" aria-label="Perfil en X (Twitter)">
+        <i class="fab fa-x-twitter" aria-hidden="true"></i>
     </a>
-    <a href="https://bsky.app/profile/jesusmartin.bsky.social" target="_blank" aria-label="Bluesky">
-        <i class="fab fa-bluesky"></i>
+    <a href="https://bsky.app" target="_blank" aria-label="Perfil en Bluesky">
+        <i class="fab fa-bluesky" aria-hidden="true"></i>
     </a>
-    <a href="mailto:jesus@martingodoy.com" aria-label="Correo electrónico">
-        <i class="fas fa-envelope"></i>
+    <a href="mailto:jesus@martingodoy.com" aria-label="Enviar un correo electrónico">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/jesusmartingodoy/" target="_blank" aria-label="Perfil en LinkedIn">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
     </a>
 </body>
 </html>

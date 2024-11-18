@@ -57,10 +57,10 @@
             outline: 2px solid #007acc;
             outline-offset: 4px;
         }
-        svg {
+        /* Uniform size for icons */
+        .icon {
             width: 2rem;
             height: 2rem;
-            fill: currentColor;
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -74,15 +74,15 @@
     <h1>Hi <span class="wave">👋🏻</span>, Jesús here!</h1>
     <div class="social-links">
         <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-            <img src="/logos/x.svg" alt="Twitter logo">
+            <img src="/logos/x.svg" alt="Twitter logo" class="icon">
         </a>
         <a href="https://bsky.app" target="_blank" aria-label="Bluesky">
-            <img src="/logos/bluesky.svg" alt="Bluesky logo">
+            <img src="/logos/bluesky.svg" alt="Bluesky logo" class="icon">
         </a>
         <a href="https://www.linkedin.com/in/jesusmartingodoy/" target="_blank" aria-label="LinkedIn">
-            <img src="/logos/linkedin.svg" alt="LinkedIn logo">
+            <img src="/logos/linkedin.svg" alt="LinkedIn logo" class="icon">
         </a>
-        <a href="mailto:jesus@martingodoy.com" aria-label="Email">
+        <a href="mailto:jesus@martingodoy.com" aria-label="Email" class="icon">
             📧
         </a>
     </div>

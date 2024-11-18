@@ -61,9 +61,9 @@
         .icon {
             width: 2rem;
             height: 2rem;
-            filter: grayscale(100%); /* Grayscale effect */
-            transition: filter 0.3s; /* Smooth transition */
-            vertical-align: middle; /* Aligns emoji to center with images */
+            filter: grayscale(100%);
+            opacity: 0.5; /* Ajusta el valor para homogeneizar el tono de gris */
+            transition: filter 0.3s, opacity 0.3s;
         }
         /* Hover effect to remove grayscale */
         a:hover .icon {
@@ -90,7 +90,7 @@
             <img src="/logos/linkedin.svg" alt="LinkedIn logo" class="icon">
         </a>
         <a href="mailto:jesus@martingodoy.com" aria-label="Email">
-            <span class="icon">📧</span>
+            <span>✉️</span>
         </a>
     </div>
 </body>

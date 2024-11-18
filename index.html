@@ -57,19 +57,20 @@
             outline: 2px solid #007acc;
             outline-offset: 4px;
         }
-        /* Uniform size and grayscale color for icons */
+        /* Uniform grayscale and brightness for icons */
         .icon {
             width: 2rem;
             height: 2rem;
-            fill: #888; /* Uniform gray color */
-            transition: fill 0.3s;
+            filter: grayscale(100%) brightness(0.5); /* Uniform gray color */
+            transition: filter 0.3s;
         }
         a:hover .icon {
-            fill: currentColor; /* Returns to original color on hover */
+            filter: none; /* Shows original color on hover */
         }
-        /* Align email emoji to match icon height */
+        /* Align email emoji */
         .email-icon {
             font-size: 2rem;
+            line-height: 1;
             vertical-align: middle;
         }
         @media (prefers-color-scheme: dark) {

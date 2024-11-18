@@ -52,22 +52,16 @@
             text-decoration: none;
             outline: none;
             font-size: 2rem;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
         }
-        a:nth-child(1) { animation-delay: 0.2s; }
-        a:nth-child(2) { animation-delay: 0.4s; }
-        a:nth-child(3) { animation-delay: 0.6s; }
-        a:nth-child(4) { animation-delay: 0.8s; }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
+        a:focus {
+            outline: 2px solid #007acc;
+            outline-offset: 4px;
         }
-
         /* Uniform size for icons */
         .icon {
             width: 2rem;
             height: 2rem;
+            vertical-align: middle; /* Aligns emoji to center with images */
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -89,8 +83,8 @@
         <a href="https://www.linkedin.com/in/jesusmartingodoy/" target="_blank" aria-label="LinkedIn">
             <img src="/logos/linkedin.svg" alt="LinkedIn logo" class="icon">
         </a>
-        <a href="mailto:jesus@martingodoy.com" aria-label="Email" class="icon">
-            📧
+        <a href="mailto:jesus@martingodoy.com" aria-label="Email">
+            <span class="icon">✉️</span>
         </a>
     </div>
 </body>

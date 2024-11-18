@@ -57,17 +57,20 @@
             outline: 2px solid #007acc;
             outline-offset: 4px;
         }
-        /* Uniform size for icons */
+        /* Uniform size and grayscale color for icons */
         .icon {
             width: 2rem;
             height: 2rem;
-            filter: grayscale(100%);
-            opacity: 0.5; /* Ajusta el valor para homogeneizar el tono de gris */
-            transition: filter 0.3s, opacity 0.3s;
+            fill: #888; /* Uniform gray color */
+            transition: fill 0.3s;
         }
-        /* Hover effect to remove grayscale */
         a:hover .icon {
-            filter: grayscale(0%);
+            fill: currentColor; /* Returns to original color on hover */
+        }
+        /* Align email emoji to match icon height */
+        .email-icon {
+            font-size: 2rem;
+            vertical-align: middle;
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -90,7 +93,7 @@
             <img src="/logos/linkedin.svg" alt="LinkedIn logo" class="icon">
         </a>
         <a href="mailto:jesus@martingodoy.com" aria-label="Email">
-            <span>✉️</span>
+            <span class="email-icon">✉️</span>
         </a>
     </div>
 </body>

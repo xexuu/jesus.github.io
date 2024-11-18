@@ -52,21 +52,22 @@
             text-decoration: none;
             outline: none;
             font-size: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
-        a:focus {
-            outline: 2px solid #007acc;
-            outline-offset: 4px;
+        a:nth-child(1) { animation-delay: 0.2s; }
+        a:nth-child(2) { animation-delay: 0.4s; }
+        a:nth-child(3) { animation-delay: 0.6s; }
+        a:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
-        /* Uniform size for icons and smooth appearance animation */
+
+        /* Uniform size for icons */
         .icon {
             width: 2rem;
             height: 2rem;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-        /* Show icons when loaded */
-        .loaded .icon {
-            opacity: 1;
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -92,29 +93,5 @@
             📧
         </a>
     </div>
-    
-    <script>
-        // Wait until all images are loaded to apply the loaded class
-        document.addEventListener("DOMContentLoaded", () => {
-            const icons = document.querySelectorAll(".icon");
-            let loadedCount = 0;
-
-            function checkAllLoaded() {
-                loadedCount++;
-                if (loadedCount === icons.length) {
-                    document.body.classList.add("loaded");
-                }
-            }
-
-            // Check each icon's loading state
-            icons.forEach((img) => {
-                if (img.complete) {
-                    checkAllLoaded();
-                } else {
-                    img.onload = checkAllLoaded;
-                }
-            });
-        });
-    </script>
 </body>
 </html>

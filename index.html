@@ -57,21 +57,23 @@
             outline: 2px solid #007acc;
             outline-offset: 4px;
         }
-        /* Uniform grayscale and brightness for icons */
-        .icon {
+        /* Initially hidden for smooth appearance */
+        .icon, .email-icon {
             width: 2rem;
             height: 2rem;
-            filter: grayscale(100%) brightness(0.5); /* Uniform gray color */
-            transition: filter 0.3s;
+            opacity: 0;
+            transition: opacity 1s ease;
         }
-        a:hover .icon {
-            filter: none; /* Shows original color on hover */
+        /* Animation for icons and emoji */
+        .loaded .icon, .loaded .email-icon {
+            opacity: 1;
         }
-        /* Align email emoji */
         .email-icon {
             font-size: 2rem;
             line-height: 1;
             vertical-align: middle;
+            position: relative;
+            top: 0.1rem;
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -97,5 +99,30 @@
             <span class="email-icon">✉️</span>
         </a>
     </div>
+    
+    <script>
+        // Wait until all images and emoji are ready to display
+        document.addEventListener("DOMContentLoaded", () => {
+            const icons = document.querySelectorAll(".icon");
+            const emailIcon = document.querySelector(".email-icon");
+
+            let loadedCount = 0;
+
+            function checkAllLoaded() {
+                loadedCount++;
+                if (loadedCount === icons.length + 1) { // Includes the email icon
+                    document.body.classList.add("loaded");
+                }
+            }
+
+            // Check when each image is loaded
+            icons.forEach((img) => {
+                img.onload = checkAllLoaded;
+            });
+
+            // Since emoji doesn't have an onload, we assume it's "loaded" instantly
+            checkAllLoaded();
+        });
+    </script>
 </body>
 </html>

@@ -57,23 +57,16 @@
             outline: 2px solid #007acc;
             outline-offset: 4px;
         }
-        /* Initially hidden for smooth appearance */
-        .icon, .email-icon {
+        /* Uniform size for icons and smooth appearance animation */
+        .icon {
             width: 2rem;
             height: 2rem;
             opacity: 0;
             transition: opacity 1s ease;
         }
-        /* Animation for icons and emoji */
-        .loaded .icon, .loaded .email-icon {
+        /* Show icons when loaded */
+        .loaded .icon {
             opacity: 1;
-        }
-        .email-icon {
-            font-size: 2rem;
-            line-height: 1;
-            vertical-align: middle;
-            position: relative;
-            top: 0.1rem;
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -86,42 +79,41 @@
 <body>
     <h1>Hi <span class="wave">👋🏻</span>, Jesús here!</h1>
     <div class="social-links">
-        <a href="https://twitter.com/MartinGodoyJ" target="_blank" aria-label="Twitter">
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
             <img src="/logos/x.svg" alt="Twitter logo" class="icon">
         </a>
-        <a href="https://bsky.app/profile/martingodoy.com" target="_blank" aria-label="Bluesky">
+        <a href="https://bsky.app" target="_blank" aria-label="Bluesky">
             <img src="/logos/bluesky.svg" alt="Bluesky logo" class="icon">
         </a>
         <a href="https://www.linkedin.com/in/jesusmartingodoy/" target="_blank" aria-label="LinkedIn">
             <img src="/logos/linkedin.svg" alt="LinkedIn logo" class="icon">
         </a>
-        <a href="mailto:jesus@martingodoy.com" aria-label="Email">
-            <span class="email-icon">✉️</span>
+        <a href="mailto:jesus@martingodoy.com" aria-label="Email" class="icon">
+            📧
         </a>
     </div>
     
     <script>
-        // Wait until all images and emoji are ready to display
+        // Wait until all images are loaded to apply the loaded class
         document.addEventListener("DOMContentLoaded", () => {
             const icons = document.querySelectorAll(".icon");
-            const emailIcon = document.querySelector(".email-icon");
-
             let loadedCount = 0;
 
             function checkAllLoaded() {
                 loadedCount++;
-                if (loadedCount === icons.length + 1) { // Includes the email icon
+                if (loadedCount === icons.length) {
                     document.body.classList.add("loaded");
                 }
             }
 
-            // Check when each image is loaded
+            // Check each icon's loading state
             icons.forEach((img) => {
-                img.onload = checkAllLoaded;
+                if (img.complete) {
+                    checkAllLoaded();
+                } else {
+                    img.onload = checkAllLoaded;
+                }
             });
-
-            // Since emoji doesn't have an onload, we assume it's "loaded" instantly
-            checkAllLoaded();
         });
     </script>
 </body>

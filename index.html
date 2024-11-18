@@ -61,6 +61,13 @@
         .icon {
             width: 2rem;
             height: 2rem;
+            filter: grayscale(100%); /* Grayscale effect */
+            transition: filter 0.3s; /* Smooth transition */
+            vertical-align: middle; /* Aligns emoji to center with images */
+        }
+        /* Hover effect to remove grayscale */
+        a:hover .icon {
+            filter: grayscale(0%);
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -82,8 +89,8 @@
         <a href="https://www.linkedin.com/in/jesusmartingodoy/" target="_blank" aria-label="LinkedIn">
             <img src="/logos/linkedin.svg" alt="LinkedIn logo" class="icon">
         </a>
-        <a href="mailto:jesus@martingodoy.com" aria-label="Email" class="icon">
-            📧
+        <a href="mailto:jesus@martingodoy.com" aria-label="Email">
+            <span class="icon">📧</span>
         </a>
     </div>
 </body>

@@ -68,20 +68,24 @@
                 background-color: #121212;
                 color: #e0e0e0;
             }
+            /* Replace images with night mode versions */
+            .twitter-logo { content: url('/logos/x-white.svg'); }
+            .bluesky-logo { content: url('/logos/bluesky-white.png'); }
+            .linkedin-logo { content: url('/logos/linkedin-white.png'); }
         }
     </style>
 </head>
 <body>
     <h1>Hi <span class="wave">👋🏻</span>, Jesús here!</h1>
     <div class="social-links">
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-            <img src="/logos/x.svg" alt="Twitter logo" class="icon">
+        <a href="https://x.com/MartinGodoyJ" target="_blank" aria-label="Twitter">
+            <img src="/logos/x.svg" alt="Twitter logo" class="icon twitter-logo">
         </a>
-        <a href="https://bsky.app" target="_blank" aria-label="Bluesky">
-            <img src="/logos/bluesky.svg" alt="Bluesky logo" class="icon">
+        <a href="https://bsky.app/profile/martingodoy.com" target="_blank" aria-label="Bluesky">
+            <img src="/logos/bluesky.svg" alt="Bluesky logo" class="icon bluesky-logo">
         </a>
         <a href="https://www.linkedin.com/in/jesusmartingodoy/" target="_blank" aria-label="LinkedIn">
-            <img src="/logos/linkedin.svg" alt="LinkedIn logo" class="icon">
+            <img src="/logos/linkedin.svg" alt="LinkedIn logo" class="icon linkedin-logo">
         </a>
         <a href="mailto:jesus@martingodoy.com" aria-label="Email">
             <span class="icon">✉️</span>
